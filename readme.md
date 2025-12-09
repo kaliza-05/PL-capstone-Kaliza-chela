@@ -389,7 +389,7 @@ Realistic and meaningful test data was inserted into each table to represent rea
 ---
 
 ### 🗃️ Insertion: Suppliers  
-![Suppliers Data Inserted](./screenshots/Phase%20V/suppliers_data.png)
+![Suppliers Data Inserted](./screenshots/phase%20V/supplierinst.png)
 
 ---
 
@@ -570,7 +570,7 @@ The package was tested to confirm:
 
 ## 📁 Full SQL Script  
 All SQL scripts for Phase VI are included in:  
-`./WED_27443_SPM.sql`
+`./mon_27800.sql`
 
 ---
 
@@ -710,7 +710,7 @@ Update/delete attempts during a restricted period are rejected and logged as DEN
 
 ## 📁 Full SQL Script  
 All SQL scripts for Phase VII are available in:  
-`./WED_27443_SPM.sql`
+`./mon_27800.sql`
 
 ---
 
