@@ -471,54 +471,147 @@ SELECT
     delivered_correct,
     COUNT(delivery_id) OVER (PARTITION BY supplier_
 ```
-
-     
-### Phase VII: Advanced Database Programming and Auditing 
-
----
-
-## 🎯 Objective  
-
-To secure the Supplier Performance Monitor system by implementing:
-
-- **Trigger-based restrictions** on deliveries and ratings  
-- **Centralized audit logging** for all performance-related operations  
-- **Package-based auditing logic** for clean and reusable governance  
-
-These mechanisms ensure **traceability, accountability, and MIS-grade control** over supplier data manipulation.
+# 🧠 Phase VII: Advanced Database Programming and Auditing
+### Supplier Performance Monitor (PL/SQL Capstone Project)
 
 ---
 
-## 🔍 Problem Statement  
+## 🎯 Objective
 
-Supplier performance data is critical for procurement decisions. Unauthorized or unintended changes can corrupt scoring and evaluation processes.
-
+To secure the Supplier Performance Monitor system by implementing advanced database-level controls.  
 This phase introduces:
 
-- ❌ **Restrictions** blocking DML during protected days  
-- 🕵️ **Audit logging** of attempts (allowed or denied)  
-- 📦 **Packages** to centralize and standardize system auditing  
+- Trigger-based protection
+- Holiday and weekday restrictions
+- Centralized auditing
+- Package-driven logging logic
 
-This strengthens system reliability and provides decision-makers with **clean, trustworthy data**.
+These ensure **governance**, **traceability**, and **MIS-level accountability** for all delivery and rating operations.
 
 ---
 
-## 📅 Holiday Restriction System  
+## 🔍 Problem Statement
 
-### ✅ `spm_holiday_calendar` Table  
+Supplier performance data is sensitive and must remain accurate.  
+Unauthorized edits can create faulty evaluations and misleading MIS reports.
 
-Used to store holiday dates where supplier performance data must remain locked.
+The system therefore enforces:
 
-```sql
-CREATE TABLE spm_holiday_calendar (
-    holiday_date DATE PRIMARY KEY,
-    description  VARCHAR2(100)
-);
+- ❌ DML blocking during protected days  
+- 🕵️ Full audit logs for all attempts  
+- 🧩 Package-based logic for clean and reusable auditing workflows  
 
--- Sample holidays
-INSERT INTO spm_holiday_calendar VALUES (TO_DATE('2025-06-01','YYYY-MM-DD'), 'National Holiday');
-INSERT INTO spm_holiday_calendar VALUES (TO_DATE('2025-12-25','YYYY-MM-DD'), 'Christmas Closure');
-COMMIT;
+---
+
+## 📅 Holiday Restriction System
+
+### 📘 Holiday Calendar Table  
+A dedicated holiday table is maintained to mark days when supplier performance data cannot be changed.
+
+![Holiday Table](./screenshots/Phase%20VII/spm_holiday.png)
+
+This ensures no performance data is modified during sensitive or closed business dates.
+
+---
+
+## 🧨 Trigger-Based Restriction Logic
+
+### 🔒 Weekday & Holiday Protection  
+A trigger automatically blocks inserts, updates, or deletes on supplier performance tables during:
+
+- Monday → Friday  
+- Any defined holiday  
+
+![Trigger Created](./screenshots/Phase%20VII/spm_trigger_created.png)
+
+If a user attempts a modification during restricted periods, the system raises an error and logs the attempt.
+
+---
+
+## 🕵️ Auditing System
+
+### 🗂️ Audit Log Table  
+A centralized audit table captures:
+
+- Username  
+- Date and time  
+- Operation performed  
+- Table affected  
+- Status (Allowed / Denied)  
+- Remarks summarizing the action  
+
+![Audit Table](./screenshots/Phase%20VII/spm_audit_created.png)
+
+This table supports MIS reporting, accountability, and security analysis.
+
+---
+
+## 🔄 Trigger + Audit Integration
+
+Every action on the deliveries table is monitored using a second trigger that:
+
+1. Determines if the action is allowed  
+2. Logs the attempt through the audit package  
+3. Blocks or allows the action accordingly  
+
+![Trigger Audit](./screenshots/Phase%20VII/spm_trigger_audit.png)
+
+This ensures **every attempt** — approved or denied — is recorded.
+
+---
+
+## 📦 `audit_pkg` – Centralized Logging Package
+
+A PL/SQL package is used to centralize audit logic.  
+This improves:
+
+- Consistency in logging  
+- Reusability  
+- Maintainability  
+
+![Package specification](./screenshots/Phase%20VII/spm_audit_pkg_spec.png)
+
+![Package body](./screenshots/Phase%20VII/spm_audit_pkg_body.png)
+
+---
+
+## 🧪 Testing & Evidence
+
+### ✔️ 1. Manual Logging  
+A manual audit entry test confirms the package works independently.
+
+![Manual Log](./screenshots/Phase%20VII/spm_manual_log.png)
+
+---
+
+### ❌ 2. Denied Insert Attempt  
+An insert performed on a restricted day triggers a denial and logs the failed action.
+
+![Denied Insert](./screenshots/Phase%20VII/spm_test_insert_denied.png)
+
+---
+
+### 🔍 3. Viewing Audit History  
+Querying the audit log displays all actions, filtered by user or date.
+
+![Audit Table Log](./screenshots/Phase%20VII/spm_audit_view.png)
+
+---
+
+### ❌ 4. Denied Update & Delete  
+Update/delete attempts during a restricted period are rejected and logged as DENIED.
+
+![Denied Update/Delete](./screenshots/Phase%20VII/spm_test_update_delete.png)
+
+---
+
+## 📁 Full SQL Script  
+All SQL scripts for Phase VII are available in:  
+`./WED_27443_SPM.sql`
+
+---
+
+     
 
 
 
