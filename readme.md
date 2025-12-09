@@ -167,3 +167,15 @@ flowchart TD
   class A1 officer
   class B1 supplier
   class C1,A3,D1,E1 system
+```
+## 🎯 5. MIS Value Summary  
+1. The system provides **real-time monitoring** by updating supplier performance immediately after each recorded delivery.  
+2. MIS automation increases **operational efficiency** by reducing manual scoring and minimizing human error through PL/SQL procedures.  
+3. Procurement teams can make **data-driven decisions** by identifying high-performing and underperforming suppliers through consistent evaluation.  
+4. Automatic alerts enable **quick response to performance issues**, ensuring low-performing suppliers are addressed promptly.  
+5. All performance data is stored centrally, ensuring **consistent and accurate information flow** that supports BI dashboards and long-term procurement analysis.
+
+
+
+
+
