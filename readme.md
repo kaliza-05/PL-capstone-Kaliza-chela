@@ -323,7 +323,7 @@ SQL Developer provides a graphical interface for database administration, user c
 ---
 
 ## 📸 Screenshot: PDB Creation in SQL Developer  
-![PDB Creation](screenshots/Phase%20 IV/PDB.png)
+![PDB Creation](screenshots/Phase%20IV/PDB.png)
 
 ---
 
@@ -336,14 +336,14 @@ SQL Developer provides a graphical interface for database administration, user c
 
 ```sql
 -- Switch to the project PDB
-ALTER SESSION SET CONTAINER=wed_27443_cedrick_Supplier_db;
+ALTER SESSION SET CONTAINER=MON_27800_SUPPLIERPERFO_DB;
 
 -- Create project user
-CREATE USER cedrick27443 IDENTIFIED BY cedrick;
+CREATE USER Chela27800 IDENTIFIED BY Chela;
 
 -- Grant database privileges
-GRANT ALL PRIVILEGES TO cedrick27443;
-GRANT SYSDBA TO cedrick27443;
+GRANT ALL PRIVILEGES TO Chela27800;
+GRANT SYSDBA TO Chela27800;
 ```
 # 🧱 Phase V: Table Implementation and Data Insertion  
 ### Supplier Performance Monitor (PL/SQL Capstone Project)
