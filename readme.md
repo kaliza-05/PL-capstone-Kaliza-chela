@@ -573,7 +573,7 @@ All SQL scripts for Phase VI are included in:
 `./WED_27443_SPM.sql`
 
 ---
-```
+
 # 🧠 Phase VII: Advanced Database Programming and Auditing
 ### Supplier Performance Monitor (PL/SQL Capstone Project)
 
