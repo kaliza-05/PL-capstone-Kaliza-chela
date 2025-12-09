@@ -394,17 +394,17 @@ Realistic and meaningful test data was inserted into each table to represent rea
 ---
 
 ### 🗃️ Insertion: Deliveries  
-![Deliveries Data Inserted](./screenshots/Phase%20V/deliveries_data.png)
+![Deliveries Data Inserted](./screenshots/phase%20V/deliveriesinst.png)
 
 ---
 
 ### 🗃️ Insertion: Supplier_Ratings  
-![Ratings Data Inserted](./screenshots/Phase%20V/ratings_data.png)
+![Ratings Data Inserted](./screenshots/phase%20V/ratingsinst.png)
 
 ---
 
 ### 🗃️ Insertion: Supplier_Alerts  
-![Alerts Data Inserted](./screenshots/Phase%20V/alerts_data.png)
+![Alerts Data Inserted](./screenshots/phase%20V/alertsinst.png)
 
 ---
 
