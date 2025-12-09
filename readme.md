@@ -169,6 +169,34 @@ flowchart TD
   class C1,A3,D1,E1 system
 ```
   ## 🧩 BPMN Diagram – Supplier Performance Monitor
+
+```mermaid
+%%{init: {'theme': 'default'}}%%
+flowchart LR
+
+%% Lanes Setup
+subgraph SupplierLane["Supplier"]
+    S1["Provide Delivery Information"]
+end
+
+subgraph ProcurementLane["Procurement Officer"]
+    P1["Record Delivery Data"]
+    P2["Submit Delivery for Scoring"]
+end
+
+subgraph SystemLane["System Processes"]
+    SYS1["Run Scoring Engine"]
+    SYS2["Update Supplier_Ratings Table"]
+    G1{{"Score < Threshold?"}}
+    SYS3["Generate Alert in Supplier_Alerts"]
+end
+
+%% Flow Connections
+S1 --> P1 --> P2 --> SYS1 --> SYS2 --> G1
+G1 -- Yes --> SYS3
+G1 -- No --> END([Process End])
+SYS3 --> END
+
 ```
 ## 🎯 5. MIS Value Summary  
 1. The system provides **real-time monitoring** by updating supplier performance immediately after each recorded delivery.  
