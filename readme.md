@@ -205,6 +205,96 @@ SYS3 --> END
 4. Automatic alerts enable **quick response to performance issues**, ensuring low-performing suppliers are addressed promptly.  
 5. All performance data is stored centrally, ensuring **consistent and accurate information flow** that supports BI dashboards and long-term procurement analysis.
 
+# 🧩 Phase III: Logical Model Design  
+### Supplier Performance Monitor (PL/SQL Capstone Project)
+
+## 🎯 Objective  
+The goal of this phase is to design a **normalized, relational, and constraint-enforced logical data model** for the Supplier Performance Monitor System.  
+This model is based on the real-world needs identified in **Phase I** and the automated workflow designed in **Phase II**, ensuring accurate representation of supplier deliveries, performance scoring, and alert generation.
+
+---
+
+## 🗃️ Entities & Attributes  
+
+### 🏢 Suppliers  
+| Attribute       | Type           | Constraint                        |
+|-----------------|----------------|-----------------------------------|
+| Supplier_ID     | NUMBER         | Primary Key (Auto-generated)       |
+| Supplier_Name   | VARCHAR2(150)  | NOT NULL                          |
+| Contact_Info    | VARCHAR2(200)  | UNIQUE                            |
+| Created_At      | DATE           | DEFAULT SYSDATE                   |
+
+---
+
+### 📦 Deliveries  
+| Attribute        | Type      | Constraint                                   |
+|------------------|-----------|-----------------------------------------------|
+| Delivery_ID      | NUMBER    | Primary Key (Auto-generated)                 |
+| Supplier_ID      | NUMBER    | Foreign Key → Suppliers                      |
+| Expected_Date    | DATE      | NOT NULL                                     |
+| Delivered_Date   | DATE      | NOT NULL                                     |
+| Quality_Score    | NUMBER    | CHECK (Quality_Score BETWEEN 1 AND 100)      |
+| Delivered_Correct| CHAR(1)   | CHECK (Delivered_Correct IN ('Y','N'))       |
+
+---
+
+### ⭐ Supplier_Ratings  
+| Attribute      | Type         | Constraint                                   |
+|----------------|--------------|-----------------------------------------------|
+| Rating_ID      | NUMBER       | Primary Key (Auto-generated)                  |
+| Supplier_ID    | NUMBER       | Foreign Key → Suppliers                       |
+| Average_Score  | NUMBER       | CHECK (Average_Score BETWEEN 0 AND 100)       |
+| Rating_Status  | VARCHAR2(20) | NOT NULL                                      |
+| Last_Updated   | DATE         | DEFAULT SYSDATE                               |
+
+---
+
+### 🚨 Supplier_Alerts  
+| Attribute      | Type          | Constraint                                   |
+|----------------|---------------|-----------------------------------------------|
+| Alert_ID       | NUMBER        | Primary Key (Auto-generated)                  |
+| Supplier_ID    | NUMBER        | Foreign Key → Suppliers                       |
+| Alert_Type     | VARCHAR2(100) | NOT NULL                                      |
+| Alert_Details  | VARCHAR2(500) | NOT NULL                                      |
+| Alert_Time     | DATE          | DEFAULT SYSDATE                               |
+
+---
+
+## 🔄 Relationships & Constraints  
+
+- 🧩 **Suppliers → Deliveries** — *One-to-Many*  
+- 📊 **Suppliers → Supplier_Ratings** — *One-to-One* (each supplier has one rating summary)  
+- 🚨 **Suppliers → Supplier_Alerts** — *One-to-Many*  
+- 🔗 **Foreign Keys** enforce relational integrity  
+- 🔍 **CHECK constraints** ensure valid data values  
+- ♻️ **Sychronized updates** ensure the scoring engine maintains consistent ratings  
+
+---
+
+## 📐 Normalization (3NF Verified)
+
+- ✅ **1NF:** All fields contain atomic values  
+- ✅ **2NF:** Every attribute is fully dependent on the primary key  
+- ✅ **3NF:** No transitive dependencies; derived data lives only in Supplier_Ratings  
+
+---
+
+## 🖼️ ERD Diagram
+
+> 🟩 **Visual Placeholder: Logical Data Model ERD**  
+> The following diagrams represent all entities, primary keys, foreign keys, and relationships.
+
+![ERD - Supplier Performance Model](./screenshots/PhaseIII/ERD1.png)
+
+---
+
+![ERD - Supplier Performance Model](./screenshots/PhaseIII/ERD2.png)
+
+---
+
+## 📂 Phase III Deliverables  
+
+
 
 
 
