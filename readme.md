@@ -323,7 +323,7 @@ SQL Developer provides a graphical interface for database administration, user c
 ---
 
 ## 📸 Screenshot: PDB Creation in SQL Developer  
-![PDB Creation](./screenshots/Phase%20IV/pdb.png)
+![PDB Creation](./screenshots/Phase%20IV/PDB.png)
 
 ---
 
