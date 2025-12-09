@@ -471,6 +471,109 @@ SELECT
     delivered_correct,
     COUNT(delivery_id) OVER (PARTITION BY supplier_
 ```
+    # 🛠️ PL/SQL Components
+
+---
+
+## ✅ Procedure: Supplier Score Calculation
+
+A PL/SQL procedure was created to:
+
+- Evaluate timeliness, accuracy, and quality  
+- Apply weighted scoring  
+- Generate an average performance score  
+- Update the supplier’s rating status  
+- Use **cursors** to iterate through all deliveries  
+
+This procedure automates supplier performance scoring.
+
+![Procedure](./screenshots/Phase%20VI/procedure_score_calc.png)
+
+---
+
+### 📌 Cursors Used
+
+Cursors allowed multiple delivery rows to be processed one-by-one, enabling accurate scoring logic.
+
+![Cursor](./screenshots/Phase%20VI/cursor_score_completed.png)
+
+---
+
+## 🧪 Testing the PL/SQL Components
+
+All logic was tested using anonymous PL/SQL blocks to ensure correctness.
+
+---
+
+## 🔍 Function Testing: Supplier Status Retrieval
+
+A function was built to return a supplier’s:
+
+- Rating status (GOOD, FAIR, POOR)  
+- Current performance condition  
+
+Useful for dashboards and system results.
+
+![Function Test](./screenshots/Phase%20VI/function_test_supplier.png)
+
+---
+
+## 🔔 Trigger Testing: Low-Performance Alerts
+
+A trigger automatically generates an alert when:
+
+- A supplier’s average score falls below the acceptable threshold  
+
+This ensures timely notification for procurement teams.
+
+![Trigger Test](./screenshots/Phase%20VI/trigger_supplier_test.png)
+
+---
+
+# 📦 PL/SQL Package: `supplier_monitor_pkg`
+
+All procedures and functions were placed inside a package for:
+
+- Cleaner structure  
+- Easy maintenance  
+- Reusability across modules  
+
+---
+
+### 📄 Package Specification
+
+Defines available procedures and functions.
+
+![Package Spec](./screenshots/Phase%20VI/package_supplier_spec.png)
+
+---
+
+### 📄 Package Body
+
+Implements the full logic for scoring and status retrieval.
+
+![Package Body](./screenshots/Phase%20VI/package_supplier_body1.png)
+
+---
+
+## 🧪 Package Testing
+
+The package was tested to confirm:
+
+- Score calculation works  
+- Status returns accurately  
+- Alerts trigger properly  
+
+![Package Testing](./screenshots/Phase%20VI/package_testing_supplier.png)
+
+---
+
+## 📁 Full SQL Script  
+All SQL scripts for Phase VI are included in:  
+`./WED_27443_SPM.sql`
+
+---
+```
 # 🧠 Phase VII: Advanced Database Programming and Auditing
 ### Supplier Performance Monitor (PL/SQL Capstone Project)
 
