@@ -292,7 +292,59 @@ This model is based on the real-world needs identified in **Phase I** and the au
 
 ---
 
-## 📂 Phase III Deliverables  
+# 🏗️ Phase IV: Database Creation and Access Setup (via SQL Developer)
+### Supplier Performance Monitor (PL/SQL Capstone Project)
+
+---
+
+## 🎯 Objective  
+To create a dedicated Oracle PL/SQL development environment for the **Supplier Performance Monitor System** using **SQL Developer** as an alternative to Oracle Enterprise Manager (OEM).  
+This setup enables secure access, database object creation, and prepares the workspace for Phase V (table implementation).
+
+---
+
+## 🔐 Task 1: PDB and User Creation (SQL Developer)
+
+The project environment was configured inside an Oracle **Pluggable Database (PDB)** using SQL Developer.  
+SQL Developer provides a graphical interface for database administration, user creation, and privilege management without relying on OEM.
+
+---
+
+## 🧰 Configuration Summary
+
+| Component             | Value                                         |
+|-----------------------|-----------------------------------------------|
+| **Tool Used**         | SQL Developer (OEM Alternative)               |
+| **PDB Name**          | `wed_27443_cedrick_Supplier_db`               |
+| **User Created**      | `cedrick27443`                                |
+| **Password**          | `cedrick`                                     |
+| **Privileges Granted**| Full DBA privileges                           |
+
+---
+
+## 📸 Screenshot: PDB Creation in SQL Developer  
+![PDB Creation](./screenshots/Phase%20IV/pdb.png)
+
+---
+
+## 📸 Screenshot: User Created & Privileges Granted  
+![Privileges](./screenshots/Phase%20IV/privileges.png)
+
+---
+
+## 🔧 SQL Commands Executed (SQLPlus)
+
+```sql
+-- Switch to the project PDB
+ALTER SESSION SET CONTAINER=wed_27443_cedrick_Supplier_db;
+
+-- Create project user
+CREATE USER cedrick27443 IDENTIFIED BY cedrick;
+
+-- Grant database privileges
+GRANT ALL PRIVILEGES TO cedrick27443;
+GRANT SYSDBA TO cedrick27443;
+
 
 
 
