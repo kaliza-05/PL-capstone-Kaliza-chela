@@ -487,7 +487,7 @@ A PL/SQL procedure was created to:
 
 This procedure automates supplier performance scoring.
 
-![Procedure](./screenshots/Phase%20VI/procedure_score_calc.png)
+![Procedure](./screenshots/phase%20VI/procedures.png)
 
 ---
 
