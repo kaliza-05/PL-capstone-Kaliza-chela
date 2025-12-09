@@ -168,6 +168,8 @@ flowchart TD
   class B1 supplier
   class C1,A3,D1,E1 system
 ```
+  ## 🧩 BPMN Diagram – Supplier Performance Monitor
+```
 ## 🎯 5. MIS Value Summary  
 1. The system provides **real-time monitoring** by updating supplier performance immediately after each recorded delivery.  
 2. MIS automation increases **operational efficiency** by reducing manual scoring and minimizing human error through PL/SQL procedures.  
