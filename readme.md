@@ -422,7 +422,55 @@ A set of join queries were executed to validate table relationships and ensure r
 
 ---
 
-## 📂 Phase V Deliverables  
+#  Phase VI: PL/SQL Programming (Procedures, Functions, Cursors, Triggers, Packages)
+### Supplier Performance Monitor (PL/SQL Capstone Project)
+
+---
+
+##  Objective  
+To implement core business logic of the **Supplier Performance Monitor System** using PL/SQL.  
+This phase automates supplier scoring, evaluates delivery performance, updates ratings, and generates alerts for underperforming suppliers through PL/SQL **procedures, functions, cursors, triggers, and packages**.
+
+---
+
+# 🧱 Database Operations
+
+## 🔁 DML Operations  
+- `INSERT`, `UPDATE`, `DELETE` operations were used to manipulate **deliveries**, **ratings**, and **alerts**.  
+- Example operations included:  
+  - Inserting new delivery records  
+  - Updating supplier performance scores  
+  - Deleting test logs during development  
+
+![DML](./screenshots/Phase%20VI/dml_supplier.png)
+
+---
+
+## 🧩 DDL Operations  
+- Applied `CREATE`, `ALTER`, and `DROP` commands during testing to refine structures.  
+- Example changes:  
+  - Adding `Last_Updated` to `supplier_ratings`  
+  - Updating CHECK constraints for accuracy fields  
+
+![DDL](./screenshots/Phase%20VI/ddl_supplier.png)
+
+---
+
+# 💡 Simple Analytics Problem Statement
+
+> “Evaluate which suppliers frequently deliver late or provide poor quality, helping identify low-performing vendors.”
+
+A **Window Function** was used to analyze supplier delivery performance trends.
+
+```sql
+SELECT 
+    supplier_id,
+    delivered_date,
+    expected_date,
+    quality_score,
+    delivered_correct,
+    COUNT(delivery_id) OVER (PARTITION BY supplier_
+
 
 
 
