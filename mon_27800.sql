@@ -15,12 +15,13 @@ CREATE TABLE deliveries (
 );
 
 CREATE TABLE supplier_ratings (
-    rating_id      NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    supplier_id    NUMBER REFERENCES suppliers(supplier_id),
-    average_score  NUMBER CHECK (average_score BETWEEN 0 AND 100),
-    rating_status  VARCHAR2(20) NOT NULL,
-    last_updated   DATE DEFAULT SYSDATE
+    rating_id       NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    supplier_id     NUMBER REFERENCES suppliers(supplier_id),
+    average_score   NUMBER CHECK (average_score BETWEEN 0 AND 100),
+    rating_status   VARCHAR2(20),
+    last_updated    DATE
 );
+
 
 CREATE TABLE supplier_alerts (
     alert_id       NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,

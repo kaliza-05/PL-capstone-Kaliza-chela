@@ -315,9 +315,9 @@ SQL Developer provides a graphical interface for database administration, user c
 | Component             | Value                                         |
 |-----------------------|-----------------------------------------------|
 | **Tool Used**         | SQL Developer (OEM Alternative)               |
-| **PDB Name**          | `wed_27443_cedrick_Supplier_db`               |
-| **User Created**      | `cedrick27443`                                |
-| **Password**          | `cedrick`                                     |
+| **PDB Name**          | `MON_27800_SUPPLIERPERFO_DB`               |
+| **User Created**      | `Chela27800`                                |
+| **Password**          | `abcd`                                     |
 | **Privileges Granted**| Full DBA privileges                           |
 
 ---
@@ -358,27 +358,27 @@ This phase ensures data integrity, correct constraints, and realistic supplier, 
 
 ## 🔨 Step 1: Table Creation  
 
-✅ The following tables were created in the schema `wed_27443_cedrick_Supplier_db` using SQL Developer:
+✅ The following tables were created in the schema `MON_27800_SUPPLIERPERFO_DB` using SQL Developer:
 
 ---
 
 ### 🧱 Table: Suppliers  
-![Suppliers Table Created](./screenshots/Phase%20V/suppliers_created.png)
+![Suppliers Table Created](./screenshots/phase%20V/suppliers.png)
 
 ---
 
 ### 🧱 Table: Deliveries  
-![Deliveries Table Created](./screenshots/Phase%20V/deliveries_created.png)
+![Deliveries Table Created](./screenshots/phase%20V/deliveries.png)
 
 ---
 
 ### 🧱 Table: Supplier_Ratings  
-![Ratings Table Created](./screenshots/Phase%20V/ratings_created.png)
+![Ratings Table Created](./screenshots/Phase%20V/ratings.png)
 
 ---
 
 ### 🧱 Table: Supplier_Alerts  
-![Alerts Table Created](./screenshots/Phase%20V/alerts_created.png)
+![Alerts Table Created](./screenshots/Phase%20V/alerts.png)
 
 ---
 
