@@ -373,12 +373,12 @@ This phase ensures data integrity, correct constraints, and realistic supplier, 
 ---
 
 ### 🧱 Table: Supplier_Ratings  
-![Ratings Table Created](./screenshots/Phase%20V/ratings.png)
+![Ratings Table Created](./screenshots/phase%20V/ratings.png)
 
 ---
 
 ### 🧱 Table: Supplier_Alerts  
-![Alerts Table Created](./screenshots/Phase%20V/alerts.png)
+![Alerts Table Created](./screenshots/phase%20V/alerts.png)
 
 ---
 
