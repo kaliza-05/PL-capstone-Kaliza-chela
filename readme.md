@@ -288,7 +288,7 @@ This model is based on the real-world needs identified in **Phase I** and the au
 
 ---
 
-![ERD - Supplier Performance Model](./screenshots/phase%20III/ERD2.jng)
+![ERD - Supplier Performance Model](./screenshots/phase%20III/ERD2.jpg)
 
 ---
 
