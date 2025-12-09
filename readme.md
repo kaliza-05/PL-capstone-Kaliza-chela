@@ -345,6 +345,85 @@ CREATE USER cedrick27443 IDENTIFIED BY cedrick;
 GRANT ALL PRIVILEGES TO cedrick27443;
 GRANT SYSDBA TO cedrick27443;
 
+# 🧱 Phase V: Table Implementation and Data Insertion  
+### Supplier Performance Monitor (PL/SQL Capstone Project)
+
+---
+
+## 🎯 Objective  
+To implement the physical Oracle database structure for the Supplier Performance Monitor system and insert meaningful test data.  
+This phase ensures data integrity, correct constraints, and realistic supplier, delivery, rating, and alert information to support future PL/SQL scoring and alerting logic.
+
+---
+
+## 🔨 Step 1: Table Creation  
+
+✅ The following tables were created in the schema `wed_27443_cedrick_Supplier_db` using SQL Developer:
+
+---
+
+### 🧱 Table: Suppliers  
+![Suppliers Table Created](./screenshots/Phase%20V/suppliers_created.png)
+
+---
+
+### 🧱 Table: Deliveries  
+![Deliveries Table Created](./screenshots/Phase%20V/deliveries_created.png)
+
+---
+
+### 🧱 Table: Supplier_Ratings  
+![Ratings Table Created](./screenshots/Phase%20V/ratings_created.png)
+
+---
+
+### 🧱 Table: Supplier_Alerts  
+![Alerts Table Created](./screenshots/Phase%20V/alerts_created.png)
+
+---
+
+## 📥 Step 2: Data Insertion  
+
+Realistic and meaningful test data was inserted into each table to represent real supplier performance scenarios such as late deliveries, incorrect items, and low quality scores.
+
+---
+
+### 🗃️ Insertion: Suppliers  
+![Suppliers Data Inserted](./screenshots/Phase%20V/suppliers_data.png)
+
+---
+
+### 🗃️ Insertion: Deliveries  
+![Deliveries Data Inserted](./screenshots/Phase%20V/deliveries_data.png)
+
+---
+
+### 🗃️ Insertion: Supplier_Ratings  
+![Ratings Data Inserted](./screenshots/Phase%20V/ratings_data.png)
+
+---
+
+### 🗃️ Insertion: Supplier_Alerts  
+![Alerts Data Inserted](./screenshots/Phase%20V/alerts_data.png)
+
+---
+
+## 🔍 Step 3: Data Integrity Validation  
+
+A set of join queries were executed to validate table relationships and ensure referential integrity across the system.
+
+> ✅ Validation confirmed:
+- All foreign keys are valid  
+- Supplier–delivery–rating relationships work correctly  
+- Alerts correctly reference suppliers with low performance  
+- Data follows the logical workflow from Phase II  
+
+![Query Output](./screenshots/Phase%20V/data_integrity.png)
+
+---
+
+## 📂 Phase V Deliverables  
+
 
 
 
