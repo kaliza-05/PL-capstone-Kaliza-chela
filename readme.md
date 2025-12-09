@@ -1,7 +1,7 @@
 # 🎓 PL/SQL FINAL EXAM – SUPPLIER PERFORMANCE MONITOR SYSTEM
 
 ## 👤 Identification
-- **Name:** Chela Kaliza  
+- **Name:** NDARASI Kaliza Chela 
 - **Student ID:** 27800  
 - **Project Title:** Supplier Performance Monitor System  
 - **Course:** INSY 8311 – Database Development with PL/SQL  
