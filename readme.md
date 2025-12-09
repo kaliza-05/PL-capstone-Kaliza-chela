@@ -344,7 +344,7 @@ CREATE USER cedrick27443 IDENTIFIED BY cedrick;
 -- Grant database privileges
 GRANT ALL PRIVILEGES TO cedrick27443;
 GRANT SYSDBA TO cedrick27443;
-
+```
 # 🧱 Phase V: Table Implementation and Data Insertion  
 ### Supplier Performance Monitor (PL/SQL Capstone Project)
 
