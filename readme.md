@@ -284,11 +284,11 @@ This model is based on the real-world needs identified in **Phase I** and the au
 > 🟩 **Visual Placeholder: Logical Data Model ERD**  
 > The following diagrams represent all entities, primary keys, foreign keys, and relationships.
 
-![ERD - Supplier Performance Model](./screenshots/PhaseIII/ERD1.png)
+![ERD - Supplier Performance Model](./screenshots/phase%20III/ERD1.png)
 
 ---
 
-![ERD - Supplier Performance Model](./screenshots/PhaseIII/ERD2.png)
+![ERD - Supplier Performance Model](./screenshots/phase%20III/ERD2.png)
 
 ---
 
