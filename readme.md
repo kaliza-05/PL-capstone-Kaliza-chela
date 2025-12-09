@@ -470,6 +470,56 @@ SELECT
     quality_score,
     delivered_correct,
     COUNT(delivery_id) OVER (PARTITION BY supplier_
+```
+
+     
+### Phase VII: Advanced Database Programming and Auditing 
+
+---
+
+## 🎯 Objective  
+
+To secure the Supplier Performance Monitor system by implementing:
+
+- **Trigger-based restrictions** on deliveries and ratings  
+- **Centralized audit logging** for all performance-related operations  
+- **Package-based auditing logic** for clean and reusable governance  
+
+These mechanisms ensure **traceability, accountability, and MIS-grade control** over supplier data manipulation.
+
+---
+
+## 🔍 Problem Statement  
+
+Supplier performance data is critical for procurement decisions. Unauthorized or unintended changes can corrupt scoring and evaluation processes.
+
+This phase introduces:
+
+- ❌ **Restrictions** blocking DML during protected days  
+- 🕵️ **Audit logging** of attempts (allowed or denied)  
+- 📦 **Packages** to centralize and standardize system auditing  
+
+This strengthens system reliability and provides decision-makers with **clean, trustworthy data**.
+
+---
+
+## 📅 Holiday Restriction System  
+
+### ✅ `spm_holiday_calendar` Table  
+
+Used to store holiday dates where supplier performance data must remain locked.
+
+```sql
+CREATE TABLE spm_holiday_calendar (
+    holiday_date DATE PRIMARY KEY,
+    description  VARCHAR2(100)
+);
+
+-- Sample holidays
+INSERT INTO spm_holiday_calendar VALUES (TO_DATE('2025-06-01','YYYY-MM-DD'), 'National Holiday');
+INSERT INTO spm_holiday_calendar VALUES (TO_DATE('2025-12-25','YYYY-MM-DD'), 'Christmas Closure');
+COMMIT;
+
 
 
 
